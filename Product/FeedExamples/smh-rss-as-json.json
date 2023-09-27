@@ -1,0 +1,120 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore.*": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionType": "SQLite",
+  "Elsa": {
+    "Features": {
+      "DefaultPersistence": {
+        "Enabled": true,
+        "Framework": "EntityFrameworkCore",
+        "ConnectionStringIdentifier": "Sqlite"
+      },
+      "DispatcherHangfire": false,
+      "Console": true,
+      "Http": true,
+      "Email": true,
+      "TemporalQuartz": true,
+      "JavaScriptActivities": true,
+      "UserTask": true,
+      "Conductor": true,
+      "Telnyx": true,
+      "File": true,
+      "Azure": {
+        "ServiceBus": {
+          "Enabled": false,
+          "ConnectionStringName": "AzureServiceBus"
+        }
+      },
+      "Webhooks": {
+        "Enabled": true,
+        "Framework": "EntityFrameworkCore",
+        "ConnectionStringIdentifier": "Sqlite"
+      },
+      "WorkflowSettings": {
+        "Enabled": true,
+        "Framework": "EntityFrameworkCore",
+        "ConnectionStringIdentifier": "Sqlite"
+      },
+      "RabbitMq": {
+        "Enabled": false,
+        "ConnectionStringIdentifier": "RabbitMq"
+      },
+      "Mqtt": {
+        "Enabled": false
+      },
+      "ExecuteSqlServerQuery": {
+        "Enabled": true
+      },
+      "Secrets": {
+        "Http": true,
+        "Enabled": true,
+        "Framework": "EntityFrameworkCore",
+        "ConnectionStringIdentifier": "Sqlite"
+      }
+    },
+    "WorkflowChannels": {
+      "Channels": [
+        "High",
+        "Normal",
+        "Low"
+      ],
+      "Default": "Normal"
+    },
+    "Smtp": {
+      "Host": "localhost",
+      "Port": "2525",
+      "DefaultSender": "noreply@acme.com"
+    },
+    "Retention": {
+      "SweepInterval": "1:00:00:00",
+      "TimeToLive": "30:00:00:00",
+      "BatchSize": "10"
+    },
+    "Server": {
+      "BaseUrl": "https://localhost:7063",
+      "FrontendBaseUrl": "/workflowdashboard"
+    }
+  },
+  "Backup": true,
+  "BackupToAzureStorage": false,
+  "BackupStorageConnectionString": "",
+  "Cors": {
+    "AllowedOrigins": "http://localhost:7063;https://localhost:7165"
+  },
+  "Workflows": {
+    "Info": {
+      "title": "World of Workflows",
+      "description": "This is the API for this implementation of World of Workflows.",
+      "termsOfService": "https://worldofworkflows.com/terms",
+      "contact": {
+        "name": "API Support",
+        "url": "https://worldofworkflows.com/support",
+        "email": "support@worldofworkflows.com"
+      }
+    }
+  },
+  "Registrations": {
+    "FunctionsKey": "eicAq6Ncwc4o35DidYcaxSS3_VsVRGmfi7KGcrs5K2i-AzFuEsCnqg==",
+    "FunctionsUrl": "https://wowfunctions.azurewebsites.net"
+  },
+  "Kestrel": {
+    "Endpoints": {
+      "Http": {
+        "Url": "https://*:7063",
+        "Protocols": "Http1",
+        "Certificate": {
+          "Path": "./localhost.pfx",
+          "Password": "password"
+        }
+      }
+    }
+  },
+  "Connectionstrings": {
+    "H1WFSQlite":"Data Source='C:/ProgramData/tribetech/worldofworkflows/worldofworkflows.db', Cache=shared"
+  }
+}
